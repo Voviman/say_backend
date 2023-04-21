@@ -449,7 +449,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="blog-post card-effect">
-                        <img src={% static "img/blog3.jpg" %} alt="">
+                        <img src='{% static "img/blog3.jpg" %}' alt="">
                         <h5 class="mt-4"><a href="#">harum vitae debitis sapiente praesentium aperiam au</a></h5>
                         <p>Lorem ipsum dolor sit amet consectetur nisi necessitatibus repellat distinctio eveniet </p>
                     </div>
@@ -471,19 +471,20 @@
                 </div>
             </div>
 
-            <form action="" class="row g-3 justify-content-center">
+            <form method="post" action="{% url 'index' %}" class="row g-3 justify-content-center">
+                {% csrf_token %}
                 <div class="col-md-5">
-                    <input type="text" class="form-control" placeholder="Full Name">
+                    <input type="text" class="form-control" placeholder="Full Name" name="name">
                 </div>
                 <div class="col-md-5">
-                    <input type="text" class="form-control" placeholder="Enter E-mail">
+                    <input type="text" class="form-control" placeholder="Enter E-mail" name="email">
                 </div>
                 <div class="col-md-5">
-                    <input type="tel" class="form-control" placeholder="Phone number">
+                    <input type="tel" class="form-control" placeholder="Phone number" name="number">
                 </div>
                 <div class="col-md-5">
                     <label for="disabledSelect" class="form-label">CDL-A Expereince</label>
-                    <select id="disabledSelect" class="form-select">
+                    <select id="disabledSelect" class="form-select" name="exp">
                         <option>0 year</option>
                         <option>less then 1 year</option>
                         <option>1 year +</option>
@@ -493,11 +494,11 @@
                     </select>
                 </div>
                 <div class="col-md-10">
-                    <textarea name="" id="" cols="30" rows="5" class="form-control"
+                    <textarea name="text" id="" cols="30" rows="5" class="form-control" 
                         placeholder="Enter Message"></textarea>
                 </div>
                 <div class="col-md-10 d-grid">
-                    <button class="btn btn-primary">Contact</button>
+                    <button class="btn btn-primary" value="Submit">Contact</button>
                 </div>
             </form>
 
@@ -509,7 +510,7 @@
             <div class="container">
                 <div class="row gy-4">
                     <div class="col-lg-4">
-                        <img class="logo" src={% static "img/logo-light.png" %} alt="">
+                        <img class="logo" src='{% static "img/logo-light.png" %}' alt="">
                     </div>
                     <div class="col-lg-2">
                         <h5 class="text-white">Brand</h5>

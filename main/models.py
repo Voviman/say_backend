@@ -9,3 +9,14 @@ class Blog(models.Model):
     def __str__ (self):
         return self.title
 
+
+class Driver(models.Model):
+    name = models.CharField(max_length=200)
+    email = models.CharField(max_length=100)
+    number = models.CharField(max_length=15)
+    exp = models.CharField(max_length=20)
+    text = models.CharField(max_length=1000)
+
+    def __str__(self):
+        return self.name
+    
